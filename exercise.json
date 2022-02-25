@@ -1,1 +1,1 @@
-{"pack":"54","id":0,"title":"Getting started","specs":[{"name":"cypress/integration/home.spec.ts","hash":"eb8e4e12e8aade6340d20a48e824edc185af371a"},{"name":"src/app/app.component.spec.ts","hash":"5d72bd4090161d9841719db533e75cb9f4a62318"}]}
+{"pack":"54","id":2,"title":"Templates","specs":[{"name":"cypress/integration/home.spec.ts","hash":"9b9ce0a1988b5f7c82309ac7b8d72dca4c4d0490"},{"name":"src/app/app.component.spec.ts","hash":"94f891686d1a7f58af87d661fb9683bb40c3974e"},{"name":"src/app/menu/menu.component.spec.ts","hash":"02d7c653b41517dccff3fbd78a56d3c99f993ef3"}]}
