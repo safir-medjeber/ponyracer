@@ -23,4 +23,9 @@ describe('Ponyracer', () => {
     cy.get('.navbar-toggler').click();
     cy.get(navbarLink).should('be.visible');
   });
+
+  it('should display a race list', () => {
+    cy.visit('/');
+    cy.get('h2').should('have.length', 2);
+  });
 });

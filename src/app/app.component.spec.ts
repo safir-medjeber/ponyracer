@@ -3,11 +3,12 @@ import { By } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
+import { RacesComponent } from './races/races.component';
 
 describe('AppComponent', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      declarations: [AppComponent, MenuComponent]
+      declarations: [AppComponent, MenuComponent, RacesComponent]
     })
   );
 
@@ -24,6 +25,15 @@ describe('AppComponent', () => {
     const element = fixture.debugElement;
     expect(element.query(By.directive(MenuComponent)))
       .withContext('You probably forgot to add MenuComponent to the AppComponent template')
+      .not.toBeNull();
+  });
+
+  it('should use the races component', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const element = fixture.debugElement;
+    expect(element.query(By.directive(RacesComponent)))
+      .withContext('You probably forgot to add RacesComponent to the AppComponent template')
       .not.toBeNull();
   });
 });
