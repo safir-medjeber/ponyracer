@@ -1,1 +1,1 @@
-{"pack":"54","id":3,"title":"List of races","specs":[{"name":"cypress/integration/home.spec.ts","hash":"176c45e52782a1e9b5e81c1ff65f32aeb9f40179"},{"name":"src/app/app.component.spec.ts","hash":"90e98fdc221aafcf037c3ad1686794d94f0dc96c"},{"name":"src/app/races/races.component.spec.ts","hash":"d243a2384d3e9650789ee5179b14206776246ef5"}]}
+{"pack":"54","id":4,"title":"Race service","specs":[{"name":"src/app/race.service.spec.ts","hash":"f4361140e54dc78a7bebe2221bf797cf8985e12b"},{"name":"src/app/races/races.component.spec.ts","hash":"e703d75948836add63cfe852cc9265cf9456ede0"}]}
