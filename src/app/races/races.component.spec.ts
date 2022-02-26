@@ -14,22 +14,33 @@ describe('RacesComponent', () => {
   );
 
   it('should display every race name in a title', () => {
-    service.list.and.returnValue([{ name: 'Tokyo' }, { name: 'Paris' }]);
+    service.list.and.returnValue([
+      { name: 'Lyon' },
+      { name: 'Los Angeles' },
+      { name: 'Sydney' },
+      { name: 'Tokyo' },
+      { name: 'Casablanca' }
+    ]);
 
     const fixture = TestBed.createComponent(RacesComponent);
     fixture.detectChanges();
 
     expect(service.list).toHaveBeenCalled();
 
-    expect(fixture.componentInstance.races).withContext('You need to have a field `races` initialized with 2 races').not.toBeNull();
-    expect(fixture.componentInstance.races.length).withContext('You need to have a field `races` initialized with 2 races').toBe(2);
-    expect(fixture.componentInstance.races[0].name).toBe('Tokyo');
-    expect(fixture.componentInstance.races[1].name).toBe('Paris');
+    expect(fixture.componentInstance.races).withContext('You need to have a field `races` initialized with 5 races').not.toBeNull();
+    expect(fixture.componentInstance.races.length).withContext('You need to have a field `races` initialized with 5 races').toBe(5);
+    expect(fixture.componentInstance.races[0].name).toBe('Lyon');
+    expect(fixture.componentInstance.races[1].name).toBe('Los Angeles');
+    expect(fixture.componentInstance.races[2].name).toBe('Sydney');
+    expect(fixture.componentInstance.races[3].name).toBe('Tokyo');
+    expect(fixture.componentInstance.races[4].name).toBe('Casablanca');
 
     const element = fixture.nativeElement;
     const raceNames = element.querySelectorAll('h2');
-    expect(raceNames.length).withContext('You should have an `h2` element per race in your template').toBe(2);
-    expect(raceNames[0].textContent).toContain('Tokyo');
-    expect(raceNames[1].textContent).toContain('Paris');
+    expect(raceNames.length).withContext('You should have four `h2` elements').toBe(4);
+    expect(raceNames[0].textContent).toContain('Lyon');
+    expect(raceNames[1].textContent).toContain('Los Angeles');
+    expect(raceNames[2].textContent).toContain('Sydney');
+    expect(raceNames[3].textContent).toContain('Tokyo');
   });
 });
