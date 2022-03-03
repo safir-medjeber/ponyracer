@@ -1,7 +1,9 @@
 import { TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
 
 import { RacesComponent } from './races.component';
 import { RaceService } from '../race.service';
+import { RaceModel } from '../models/race.model';
 
 describe('RacesComponent', () => {
   const service = jasmine.createSpyObj<RaceService>('RaceService', ['list']);
@@ -14,13 +16,9 @@ describe('RacesComponent', () => {
   );
 
   it('should display every race name in a title', () => {
-    service.list.and.returnValue([
-      { name: 'Lyon' },
-      { name: 'Los Angeles' },
-      { name: 'Sydney' },
-      { name: 'Tokyo' },
-      { name: 'Casablanca' }
-    ]);
+    service.list.and.returnValue(
+      of([{ name: 'Lyon' }, { name: 'Los Angeles' }, { name: 'Sydney' }, { name: 'Tokyo' }, { name: 'Casablanca' }] as Array<RaceModel>)
+    );
 
     const fixture = TestBed.createComponent(RacesComponent);
     fixture.detectChanges();
